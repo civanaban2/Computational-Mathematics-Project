@@ -30,5 +30,6 @@ int main()
 	printf("a: %.6f\n", exp_a);
 	printf("b: %.6f\n", exp_b);
 	getchar();
+	getchar();
     return 0;
 }
