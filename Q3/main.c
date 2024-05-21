@@ -13,7 +13,7 @@ int main() {
         if (i >1)
             printf("3 Points Backward difference at t = %.2f: %.2f\n", t[i], backward_difference_3points(h, x, i));
         if (i < n-1 && i>0)
-            printf("3 Points Central difference at t = %.2f: %.2f\n", t[i], central_difference_3points(h, x, i););
+            printf("3 Points Central difference at t = %.2f: %.2f\n", t[i], central_difference_3points(h, x, i));
 		if (i < n-4)
             printf("5 Points Forward difference at t = %.2f: %.2f\n", t[i], forward_difference_5points(h, x, i));
         if (i < n-2 && i>1)
