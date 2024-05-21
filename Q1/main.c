@@ -10,5 +10,6 @@ int main()
     regula_falsi_method(1.6, 1.7, tol);
     fix_point_method(1.6, tol);
 
+	getchar();
     return 0;
 }

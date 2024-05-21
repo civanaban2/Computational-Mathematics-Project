@@ -12,8 +12,8 @@ void newtons_method(double x0, double tol)
         if (fabs(f(x1)) <= tol) 
 		{
             clock_t end = clock();
-    		double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
-    		printf("Newton's Method:	Root = %.8f, Iterations = %d, Time = %f seconds\n", x1, i+1, time_spent);
+    		double time_spent = (long long)(end - start) / CLOCKS_PER_SEC;
+    		printf("Newton's Method:	Root = %.8f, Iterations = %d, Time = %.15f seconds\n", x1, i+1, time_spent);
             return;
         }
 

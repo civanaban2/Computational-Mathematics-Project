@@ -10,9 +10,6 @@ int main()
 	because remaining function values are not linear in [pi, 2pi] interval.
 	*/
 
-	//Calculating dot number.
-    int n = sizeof(x) / sizeof(x[0]);
-
 	//First 5 dots are linear [2, 3.1416], then we apply trapezoidal method for 5 dots.
     double integral_trapezoidal = trapezoidal(&x[0], &y[0], 5);
     
@@ -25,6 +22,7 @@ int main()
     printf("The integral that calculated with trapezoidal method: 	%lf\n", integral_trapezoidal);
     printf("The integral that calculated with simpson (1/3) method: %lf\n", integral_simpson);
     printf("Total integral: %lf\n", integral);
-    
+
+    getchar();
     return 0;
 }
