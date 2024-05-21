@@ -12,7 +12,7 @@ void regula_falsi_method(double x0, double x1, double tol)
 		if (fabs(f(x2)) <= tol)
 		{
 			clock_t end = clock();
-			double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
+			double time_spent = ((double)(end - start)) / CLOCKS_PER_SEC;
 			printf("Regula Falsi Method:	Root = %.8f, Iterations = %d, Time = %f seconds\n", x2, i+1, time_spent);
 			return;
 		}
