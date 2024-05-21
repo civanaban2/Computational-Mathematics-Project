@@ -2,7 +2,11 @@ void regula_falsi_method(double x0, double x1, double tol)
 {
 	int max_iter = 1000;
     double x2;
-	clock_t start = clock();
+	LARGE_INTEGER frequency, start, end;
+
+    QueryPerformanceFrequency(&frequency);
+    QueryPerformanceCounter(&start);
+
     for (int i = 0; i < max_iter; i++)
 	{
 		//Calculations for regula falsi method
@@ -11,9 +15,11 @@ void regula_falsi_method(double x0, double x1, double tol)
 		//Tolerance Check
 		if (fabs(f(x2)) <= tol)
 		{
-			clock_t end = clock();
-			double time_spent = ((double)(end - start)) / CLOCKS_PER_SEC;
-			printf("Regula Falsi Method:	Root = %.8f, Iterations = %d, Time = %f seconds\n", x2, i+1, time_spent);
+			//CPU Time calculations
+			QueryPerformanceCounter(&end);
+            double time_spent = (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart;
+			
+			printf("Regula Falsi Method:	Root = %.8f, Iterations = %d, Time = %.7f seconds\n", x2, i+1, time_spent);
 			return;
 		}
         

@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 
 double f(double x)	//f(x) function that is given in question 1
 {

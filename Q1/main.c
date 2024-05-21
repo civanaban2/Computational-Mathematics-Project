@@ -3,7 +3,10 @@
 int main()
 {
     double tol = 1e-5;
-	clock_t start = clock();
+	LARGE_INTEGER frequency, start, end;
+
+    QueryPerformanceFrequency(&frequency);
+    QueryPerformanceCounter(&start);
 
     newtons_method(1.6, tol);
     secant_method(1.6, 1.7, tol);
@@ -11,9 +14,11 @@ int main()
     regula_falsi_method(1.6, 1.7, tol);
     fix_point_method(1.6, tol);
 
-	clock_t end = clock();
-	double time_spent = ((double)(end - start)) / CLOCKS_PER_SEC;
-	printf("Total time = %f seconds\n", time_spent);
+	//CPU Time calculations
+	QueryPerformanceCounter(&end);
+    double time_spent = (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart;
+	
+	printf("Total time = %.7f seconds\n", time_spent);
 
 	getchar();
     return 0;
